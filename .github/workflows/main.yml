@@ -32,7 +32,10 @@ jobs:
         platforms: linux/amd64, linux/arm/v8
         tags: ${{ secrets.DOCKER_USERNAME }}/myappsocials:latest
 
-    - name: Space Rebuild
-      run: |
-        curl -X POST "https://huggingface.co/${{ secrets.HF_USERNAME }}/${{ secrets.HF_SPACE_NAME }}/restart" \
-        -H "Authorization: Bearer ${{ secrets.HF_TOKEN }}"
+    - name: Sync to Hugging Face Space
+      uses: huggingface/hub-sync@v0.1.0
+      with:
+        github_repo_id: ${{ github.repository }}
+        huggingface_repo_id: ${{ secrets.HF_USERNAME }}/${{ secrets.HF_SPACE_NAME }}
+        hf_token: ${{ secrets.HF_TOKEN }}
+        space_sdk: docker
