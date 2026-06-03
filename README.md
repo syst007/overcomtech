@@ -1,5 +1,9 @@
 # OvercomTech - Business Website
 
+## Web Link
+https://syst007-appsocial.hf.space
+
+
 ## Deploy on Ubuntu Server (from scratch)
 
 ### Prerequisites
@@ -139,21 +143,3 @@ sudo systemctl restart nginx
 # Check Nginx status
 sudo systemctl status nginx
 ```
-
-## Project Structure
-
-```
-/var/www/html/
-├── index.html
-├── about.html
-├── services.html
-├── contact.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-└── images/
-```
-
-## Web Link
-https://syst007-appsocial.hf.space
