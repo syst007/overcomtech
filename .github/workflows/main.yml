@@ -33,7 +33,7 @@ jobs:
         tags: ${{ secrets.DOCKER_USERNAME }}/myappsocials:latest
 
     - name: Space Rebuild
-      run: |
-        curl -X POST "https://huggingface.co{{ secrets.HF_USERNAME }}/${{ secrets.HF_SPACE_NAME }}/restart" \
+      run:
+        curl -X POST "https://huggingface.co${{ secrets.HF_USERNAME }}/${{ secrets.HF_SPACE_NAME }}/restart" \
           -H "Authorization: Bearer ${{ secrets.HF_TOKEN }}"
 
