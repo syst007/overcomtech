@@ -32,7 +32,8 @@ jobs:
         platforms: linux/amd64, linux/arm/v8
         tags: ${{ secrets.DOCKER_USERNAME }}/myappsocials:latest
 
-    - name: Trigger Hugging Face Space Rebuild
+    - name: Space Rebuild
       run: |
-        curl -X POST https://huggingface.co \
+        curl -X POST https://huggingface.co{{ secrets.HF_USERNAME }}/${{ secrets.HF_SPACE_NAME }}/restart \
           -H "Authorization: Bearer ${{ secrets.HF_TOKEN }}"
+
