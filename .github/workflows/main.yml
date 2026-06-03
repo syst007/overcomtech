@@ -34,6 +34,6 @@ jobs:
 
     - name: Space Rebuild
       run: |
-        curl -X POST https://huggingface.co{{ secrets.HF_USERNAME }}/${{ secrets.HF_SPACE_NAME }}/restart \
+        curl -X POST "https://huggingface.co{{ secrets.HF_USERNAME }}/${{ secrets.HF_SPACE_NAME }}/restart" \
           -H "Authorization: Bearer ${{ secrets.HF_TOKEN }}"
 
